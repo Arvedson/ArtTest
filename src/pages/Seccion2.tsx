@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../styles/Seccion2.module.css"
+import Image from 'next/image';
+
 
 export default function Seccion2(){
     return(
@@ -52,15 +54,15 @@ export default function Seccion2(){
            
                 <div className={styles.contact}>
                     <button className={styles.fb}>
-                        <img  src="Facebook.png"/>
+                        <Image  src="/Facebook.png" alt="insta" width={80} height={80}/>
                     </button>
 
                     <button className={styles.insta}>
-                        <img  src="Instagram.png"/>
+                        <Image  src="/Instagram.png" alt="insta" width={80} height={80}/>
                     </button>
 
                     <button className={styles.wa}>
-                        <img  src="WhatsApp.png"/>
+                        <Image  src="/WhatsApp.png" alt="insta" width={80} height={80}/>
                     </button>
                     
 
