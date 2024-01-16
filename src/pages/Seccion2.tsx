@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Seccion2.module.css"
 
-export default function (){
+export default function Seccion2(){
     return(
         <div className={styles.background}>
             
