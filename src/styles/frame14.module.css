@@ -1,0 +1,131 @@
+.container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .frame14 {
+    gap: 108px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 20px 25px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    background-color:aqua;
+  }
+  .text {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    font-size: 32px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .text2 {
+    color: rgb(39, 21, 21);
+    height: auto;
+    font-size: 24px;
+    align-self: stretch;
+    font-style: Regular;
+    text-align: center;
+    transition: 0.3s;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
+  .frame13 {
+    gap: 318px;
+    display: flex;
+    padding: 0 5px;
+    align-self: stretch;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: space-between;
+  }
+  .frame12 {
+    gap: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
+  .ellipse4 {
+    background-image: url(../img/Ellipse4.png);
+    width: 43px;
+    height: 39px;
+  }
+  .ellipse6 {
+    width: 43px;
+    height: 39px;
+  }
+  .ellipse5 {
+    width: 43px;
+    height: 39px;
+  }
+  .ellipse7 {
+    width: 43px;
+    height: 39px;
+  }
+  .frame11 {
+    gap: 16px;
+    width: 185px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .ellipse3 {
+    width: 26px;
+    height: 23px;
+  }
+  .text7 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    font-size: 24px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  @media(max-width: 991px) {
+    .frame13 {
+      width: auto;
+    }
+  }
+  @media(max-width: 767px) {
+    .frame14 {
+      width: 100%;
+    }
+    .frame13 {
+      flex: 1;
+      width: auto;
+      position: relative;
+      margin-right: 0px;
+    }
+    .frame11 {
+      right: 0px;
+      width: auto;
+      bottom: 0px;
+      position: absolute;
+      align-self: flex-end;
+    }
+  }
+  @media(max-width: 479px) {
+    .text {
+      text-align: center;
+    }
+  }
+  

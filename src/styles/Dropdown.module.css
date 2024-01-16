@@ -1,0 +1,47 @@
+.contenedor {
+    display: flex;
+    background-color: rgb(70, 70, 70);
+    width: 100%;
+    padding: 1rem;
+    height: 90px;
+    justify-content: space-between;
+
+   
+
+}
+
+.logo{
+    margin: auto;
+    display: flex;
+    background-image: url("../img/logotest.png");
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+.navegacion{
+    display: flex;
+    align-items: center;    
+    list-style-type: none;
+    
+}
+
+
+.lista {
+    margin: 20px;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.lista:nth-child(3) {
+    color: red; 
+    background-color: black;
+    width: 100px;
+    border-radius: 10px;
+
+}
+
+.lista:hover {
+    background-color: rgb(0, 151, 151);
+
+}

@@ -1,0 +1,82 @@
+.container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .frame15 {
+    gap: 25px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 10px 15px;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    justify-content: space-between;
+    background-color: rgba(95, 95, 95, 1);
+  }
+  .frame16 {
+    gap: 57px;
+    width: 168px;
+    height: 432px;
+    display: flex;
+    padding: 0 0 0 10px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+  .logo1 {
+    background-image: url("../img/LOGO1.png");
+    width: auto;
+    height: 140px;
+    align-self: stretch;
+    border-radius: 5%;
+  }
+  .text {
+    color: rgba(165, 165, 165, 1);
+    width: 153px;
+    height: auto;
+    font-size: 24px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .text2 {
+    color: rgba(165, 165, 165, 1);
+    width: 202px;
+    height: auto;
+    font-size: 20px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .rectangle37 {
+    width: 102px;
+    height: 419px;
+    z-index: 1;
+    border-radius: 20px;
+    background-color: black;
+  }
+  .ellipse8 {
+    top: 5px;
+    left: 303px;
+    width: 46px;
+    height: 37px;
+    z-index: 2;
+    position: absolute;
+    background-image: url("../img/Ellipse8.png");
+
+  }
+  
