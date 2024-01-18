@@ -1,0 +1,165 @@
+.backgroundd{
+    display: flex;
+    flex-direction: column;
+    background: var(--background, #1C1B1F);
+    padding: 16px;
+    height: auto;
+    gap: 16px;
+}
+
+.componente{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background: var(--on-surface-variant, #CAC4D0);
+    height: 100%;
+    gap: 16px;
+}
+
+.nombrecuadro{
+    display: flex;
+    height: 49px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 5px;
+    background: var(--surface-variant, #49454F);
+    margin: 16px;
+    
+    /*texto*/
+    color: var(--on-surface-variant, #CAC4D0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; 
+}
+
+.imagenCuadro{ 
+    width: auto;
+    height: auto;
+    background-size:contain;
+    border-radius: 5px;
+    margin: 16px;
+    align-self: stretch;
+}
+
+.propiedades{
+    display: flex;
+    height: auto;
+    padding: 5px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 5px;
+    background: var(--surface-variant, #49454F);
+    padding-top: 0px;
+    margin: 16px;
+}
+
+.propiedades ul li{
+    margin: 10px;
+    color: var(--on-surface-variant, #CAC4D0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 90%;
+    list-style: none;
+    margin-left: 0px;
+
+}
+
+.listaDetalles{
+    display: flex;
+    flex-direction: column;
+}
+
+.detalleItem{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-left: 0px;
+    align-items: center;
+    position: relative;
+    top: 6px;   
+}
+
+.textoDetalle{
+    color: var(--on-surface-variant, #CAC4D0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 18px; /* 90% */
+}
+
+.textoDetalle::before {
+    content: '\2022'; /* Código unicode para un punto (•) */
+    color: #CAC4D0; /* Puedes ajustar el color según tus preferencias */
+    margin-right: 10px; /* Espaciado entre el "marcador" y el texto */
+}
+
+.textoDetalle2::before {
+    content: '\2022'; /* Código unicode para un punto (•) */
+    color: #CAC4D0; /* Puedes ajustar el color según tus preferencias */
+    margin-right: 10px; /* Espaciado entre el "marcador" y el texto */ 
+}
+
+.coloresCuadro{
+    display: flex;
+    gap: 5px;
+}
+
+
+/* Seccion3.module.css */
+
+.showgalery {
+
+    /* estilos generales del boton */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    height: 65px;
+    padding: 10px 16px;
+    align-items: center;
+    border-radius: 5px;
+    background: var(--surface-variant, #49454F);
+
+    /* elevation */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+    
+    /*texto */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    color: var(--on-surface-variant, #CAC4D0);
+    line-height: 18px; /* 56.25% */
+    border-style: none;
+    
+}
+
+/* Estilos específicos cuando el botón está activo */
+.active {
+    background-color: #1C1B1F;
+
+    /* Agrega otros estilos específicos cuando el botón está activo */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0px;
+    
+} 
+
+.stickyButton{
+
+    border-radius: 5px;
+    background: var(--surface-variant, #49454F);
+    
+    /* elevation5 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+
+}
+
+
+

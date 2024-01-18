@@ -90,7 +90,7 @@
         
     }
     .logo{
-        width: 320px;
+        width: auto;
     }
 }
 @media screen and (min-width: 765px) and (max-width: 900px) {
@@ -116,7 +116,7 @@
         bottom: 5px;      
     }
     .logo{
-        width: 365px;
+        width: auto;
     }
     .pinkdisplay{
         padding: 16px;
@@ -139,7 +139,7 @@
         bottom: 7px;      
     }
     .logo{
-        width: 365px;
+        width: auto;
     }
     .pinkdisplay{
         padding: 16px;
@@ -162,7 +162,7 @@
         bottom: 7px;      
     }
     .logo{
-        width: 365px;
+        width: auto;
     }
     .pinkdisplay{
         padding: 16px;
