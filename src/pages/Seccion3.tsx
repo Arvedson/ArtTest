@@ -18,7 +18,7 @@ export default function Seccion3() {
 
 
       <button
-        className={`${styles.showgalery} ${styles.stickyButton} ${
+        className={` ${styles.stickyButton} ${
           mostrarGaleria ? styles.active : ""
         }`}
         onClick={toggleGaleria}
@@ -28,7 +28,7 @@ export default function Seccion3() {
 
 
     
-      <div className={`${styles.componente} ${mostrarGaleria ? styles.active : ""}`}>
+      <div className={styles.test}>
         {mostrarGaleria && cuadrosDatos.map((cuadro, index) => (
           <Galeria key={index} cuadro={cuadro} />
         ))}

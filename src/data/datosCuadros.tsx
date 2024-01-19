@@ -35,8 +35,6 @@ const datosCuadros = [
       tamañoCuadro: "Tamaño: 130*80"
     },
 
-  
-
 
 ];
   

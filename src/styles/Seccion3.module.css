@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     background: var(--background, #1C1B1F);
-    padding: 16px;
+    padding: 0px;
     height: auto;
     gap: 16px;
 }
@@ -13,13 +13,13 @@
     border-radius: 5px;
     background: var(--on-surface-variant, #CAC4D0);
     height: 100%;
-    gap: 16px;
+    margin: 16px;
 }
 
 .nombrecuadro{
     display: flex;
     height: 49px;
-    flex-direction: column;
+    
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -44,6 +44,9 @@
     border-radius: 5px;
     margin: 16px;
     align-self: stretch;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
 }
 
 .propiedades{
@@ -96,15 +99,15 @@
 }
 
 .textoDetalle::before {
-    content: '\2022'; /* Código unicode para un punto (•) */
-    color: #CAC4D0; /* Puedes ajustar el color según tus preferencias */
-    margin-right: 10px; /* Espaciado entre el "marcador" y el texto */
+    content: '\2022'; 
+    color: #CAC4D0; 
+    margin-right: 10px; 
 }
 
 .textoDetalle2::before {
-    content: '\2022'; /* Código unicode para un punto (•) */
-    color: #CAC4D0; /* Puedes ajustar el color según tus preferencias */
-    margin-right: 10px; /* Espaciado entre el "marcador" y el texto */ 
+    content: '\2022'; /* codigo unicode para un punto (•) */
+    color: #CAC4D0; 
+    margin-right: 10px; 
 }
 
 .coloresCuadro{
@@ -113,53 +116,183 @@
 }
 
 
-/* Seccion3.module.css */
 
-.showgalery {
 
-    /* estilos generales del boton */
-    position: sticky;
-    top: 0;
-    z-index: 1;
 
+
+
+
+.test{
+    /*posiblemente borre esta clase no esta siendo esencial*/
+    width: auto;
     display: flex;
-    height: 65px;
-    padding: 10px 16px;
-    align-items: center;
-    border-radius: 5px;
-    background: var(--surface-variant, #49454F);
-
-    /* elevation */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
-    
-    /*texto */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 32px;
-    color: var(--on-surface-variant, #CAC4D0);
-    line-height: 18px; /* 56.25% */
-    border-style: none;
-    
+    flex-direction: column;
 }
 
-/* Estilos específicos cuando el botón está activo */
-.active {
-    background-color: #1C1B1F;
 
-    /* Agrega otros estilos específicos cuando el botón está activo */
-    border-top-left-radius: 0;
+
+
+.stickyButton.active{
+    background-color: antiquewhite;
+    border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    
-} 
+}
+
 
 .stickyButton{
+    position: sticky;
+    margin: 16px;
 
     border-radius: 5px;
     background: var(--surface-variant, #49454F);
+        /* estilos generales del boton */
+        top: 0;
+        z-index: 1;
+        display: flex;
+        height: 65px;
+        padding: 10px 16px;
+        align-items: center;
+        border-radius: 5px;
+        background: var(--surface-variant, #49454F);
+    
+        /* elevation */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+        
+        /*texto */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 32px;
+        color: var(--on-surface-variant, #CAC4D0);
+        line-height: 18px; /* 56.25% */
+        border-style: none;
     
     /* elevation5 */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
 
 }
+
+
+@media screen and (min-width: 660px){
+
+    .textoDetalle::before {
+        display: none;
+    }
+    
+    .textoDetalle2::before {
+       display: none;
+    }
+
+    .componente {
+
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 50% 50%;
+        padding: 16px;
+        margin: 1px;
+    }
+
+    .nombrecuadro{
+
+        grid-column: 2;
+        position: relative;    
+        justify-content: center;
+        align-self: center;
+        top: 30px;
+        background-color: transparent;
+        color: #49454F;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 28.125% */
+    }
+    
+    .imagenCuadro {
+
+        display: flex;   
+        grid-column: 1;   
+        order: 0;    
+        grid-column: 1;
+        width: 100%;
+        grid-area: 1 / 1 / 3 / 2;
+        margin: 0px; 
+        border: #49454F solid 2px;
+    }
+
+    .propiedades{
+
+        display: flex;
+        align-self: center;
+        position: relative;
+        grid-column: 2;
+        height: auto;
+        align-self: self-start;
+        justify-content: center;
+        width: auto;
+        margin-top: 0px;
+        margin-right: 0px;
+       
+       
+ 
+    }
+
+    .componente{
+        margin: 16px;
+     
+    }
+
+    .coloresCuadro{
+        min-width: 0px;
+        display: flex;
+        flex: 1
+        ;
+        flex-shrink: 1;
+        gap: 2px;
+        margin-right: 5px;
+
+
+    }
+
+    .detalleItem{
+        gap: 5px;
+    }
+
+ 
+
+
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+
+
+
+
+}
+
+@media screen and (min-width: 900px) and (max-width: 1240px) {
+
+    .backgroundd{
+        padding: 64px;
+    }
+
+
+
+}
+
+@media screen and (min-width: 1241px) and (max-width: 1400px) {
+
+    .backgroundd{
+        padding: 128px;
+    }
+
+
+
+}
+  
 
 
 
