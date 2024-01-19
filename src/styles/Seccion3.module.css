@@ -115,13 +115,6 @@
     gap: 5px;
 }
 
-
-
-
-
-
-
-
 .test{
     /*posiblemente borre esta clase no esta siendo esencial*/
     width: auto;
@@ -129,13 +122,11 @@
     flex-direction: column;
 }
 
-
-
-
 .stickyButton.active{
-    background-color: antiquewhite;
+    
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+
 }
 
 
@@ -145,7 +136,7 @@
 
     border-radius: 5px;
     background: var(--surface-variant, #49454F);
-        /* estilos generales del boton */
+        /* estilos  del boton */
         top: 0;
         z-index: 1;
         display: flex;
@@ -154,9 +145,7 @@
         align-items: center;
         border-radius: 5px;
         background: var(--surface-variant, #49454F);
-    
-        /* elevation */
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+
         
         /*texto */
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -216,7 +205,6 @@
         margin: 0px; 
         border: #49454F solid 2px;
     }
-
     .propiedades{
 
         display: flex;
@@ -229,17 +217,14 @@
         width: auto;
         margin-top: 0px;
         margin-right: 0px;
-       
-       
- 
     }
 
     .componente{
-        margin: 16px;
-     
-    }
 
+        margin: 16px;  
+    }
     .coloresCuadro{
+
         min-width: 0px;
         display: flex;
         flex: 1
@@ -247,29 +232,14 @@
         flex-shrink: 1;
         gap: 2px;
         margin-right: 5px;
-
-
     }
-
     .detalleItem{
+
         gap: 5px;
     }
-
- 
-
-
-
-
 }
 
-
-
-
-
 @media screen and (min-width: 700px) and (max-width: 900px) {
-
-
-
 
 }
 
@@ -278,9 +248,6 @@
     .backgroundd{
         padding: 64px;
     }
-
-
-
 }
 
 @media screen and (min-width: 1241px) and (max-width: 1400px) {
@@ -288,9 +255,6 @@
     .backgroundd{
         padding: 128px;
     }
-
-
-
 }
   
 
