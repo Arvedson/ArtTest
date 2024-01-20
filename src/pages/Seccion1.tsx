@@ -11,13 +11,11 @@ export default function Seccion1(){
                     <Image src="/LOGOBIEN.png" alt="log "className={styles.logo} width={295} height={205}/>
                 </div>
                 <p className={styles.texto1}>
-                    Te hacemos un cuadro que se adapte  a tus necesidades
+                    Te hacemos un cuadro que se adapte a tus necesidades
                 </p>
             </div>
 
-            <button className={styles.button}>
-                haz tu pedido
-            </button>
+
         </div>
     )
 }

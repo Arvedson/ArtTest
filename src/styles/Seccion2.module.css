@@ -8,6 +8,46 @@
 }
 
 
+.button{
+    position: sticky;
+   
+
+    border-radius: 5px;
+    
+        /* estilos  del boton */
+        top: 0;
+        z-index: 1;
+        display: flex;
+        height: 65px;
+        width: 100%;
+       
+       
+        padding: 10px 16px;
+        align-items: center;
+        border-radius: 5px;
+        background: var(--secondary-container, #4A4458);
+
+        
+        /*texto */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 32px;
+        color: var(--on-secondary-container, #E8DEF8);
+        line-height: 18px; /* 56.25% */
+        border-style: none;
+    
+    /* elevation5 */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hidden{
+    display: none;
+}
+
+.active{
+    margin-bottom: 16px;
+}
+
+
 .div1{
     border-radius: 5px;
     background: var(--surface-variant, #49454F);
@@ -47,6 +87,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 
 
 
@@ -192,6 +234,11 @@
 }
 
 
+@media screen and (min-width: 0px) and (max-width: 699px){
+    .div2, .div3 {
+        margin-bottom: 16px;
+    }
+}
 
 
 @media screen and (min-width: 700px) and (max-width: 900px) {

@@ -12,6 +12,7 @@
 .stickyButton{
 
     position: sticky;
+    margin-top: -4px;
    
 
     border-radius: 5px;
@@ -44,10 +45,7 @@
 .hidden{
     display: none;
 }
-.stickyButton.active{
-    position: sticky;
 
-}
 
 .blog{
     display: flex;

@@ -15,7 +15,7 @@ const Seccion4: React.FC = () => {
 
     const [mostrarBlog, setMostrarblog] = useState(false);
 
-    const toggleGaleria = () => {
+    const toggleBlog = () => {
       setMostrarblog(!mostrarBlog);
     };
   
@@ -36,7 +36,7 @@ const Seccion4: React.FC = () => {
                 className={` ${styles.stickyButton} ${
                 mostrarBlog ? styles.active : ""
                 }`}
-                onClick={toggleGaleria}>
+                onClick={toggleBlog}>
                 {mostrarBlog ? "Ocultar" : "Sobre mi"}
             </button>
 
