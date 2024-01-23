@@ -20,7 +20,7 @@ export default function SeccionGenerica(props: seccion2Props){
                     {props.abrirBoton ? props.opcion1 : props.opcion2}
                 </button>
                 <div className={` ${!props.abrirBoton ? styles.hidden : styles.blog}`}>
-                    {props.children}
+                 
                 </div>
             </div>
 
