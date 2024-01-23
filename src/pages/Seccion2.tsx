@@ -7,7 +7,7 @@ interface seccion2Props {
   toggleBoton: (event: any) => any;
 }
 
-// Cambiado de export default function a export const Seccion2
+
 const Seccion2: React.FC<seccion2Props> = (props) => {
   return (
     <div>
