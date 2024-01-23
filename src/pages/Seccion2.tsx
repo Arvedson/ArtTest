@@ -3,16 +3,13 @@ import styles from "../styles/Seccion2.module.css"
 import Image from 'next/image';
 import React, { useState } from "react";
 
+interface seccion2Props{
+    abrirBoton: boolean;
+    toggleBoton: (event:any)=> any
+    
+}
 
-
-export default function Seccion2(){
-
-    const [mostrarPedido, setMostrarpedido] = useState(false)
-
-    const tooglePedido = () =>{
-        setMostrarpedido(!mostrarPedido);
-    }
-
+export default function Seccion2(props: seccion2Props){
 
 
     return(
@@ -20,21 +17,16 @@ export default function Seccion2(){
 
         <div>
 
-
-
             <div className={styles.background}>
 
-
                 <button
-                    className={` ${styles.button} ${
-                    mostrarPedido ? styles.active : ""
-                    }`}
-                    onClick={tooglePedido}>
-                    {mostrarPedido ? "Ocultar" : "Haz tu pedido"}
+                    className={` ${styles.button} ${props.abrirBoton ? styles.active : " " }`}
+                    onClick={props.toggleBoton}>
+                    {props.abrirBoton ? "Ocultar" : "Haz tu pedido"}
                 </button>
 
 
-                <div className={` ${!mostrarPedido ? styles.hidden : styles.blog}`}>
+                <div className={` ${!props.abrirBoton ? styles.hidden : styles.blog}`}>
 
                 <div className={styles.mediaq}>
 

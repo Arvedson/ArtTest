@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import styles from "../styles/Seccion3.module.css";
 
-// Define un tipo para la prop 'cuadro'
+
 interface CuadroProps {
   nombreCuadro: string;
   imagenCuadro: string;

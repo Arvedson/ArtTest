@@ -1,0 +1,17 @@
+.mostrar {
+    opacity: 1; /* Haciendo visible el elemento */
+    transform: translateY(0); /* Sin desplazamiento en el eje Y */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y desplazamiento */
+  }
+  
+  .ocultar {
+    height: 0px;
+    opacity: 0; /* Volviendo el elemento invisible */
+    transform: translateY(-100%); /* Desplazándolo hacia arriba */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y desplazamiento */
+  }
+  
+.fondo{
+    background: var(--background, #1C1B1F); 
+    
+}

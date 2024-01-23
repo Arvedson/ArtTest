@@ -1,15 +1,18 @@
-// Seccion3.js
+
 import React, { useState } from "react";
 import Galeria from "./Galeria";
 import cuadrosDatos from "../data/datosCuadros";
 import styles from "../styles/Seccion3.module.css";
 
-export default function Seccion3() {
-  const [mostrarGaleria, setMostrarGaleria] = useState(false);
+interface seccion3Props{
+  abrirBoton2: boolean;
+  toggleBoton2: (event:any)=> any
+  
+}
 
-  const toggleGaleria = () => {
-    setMostrarGaleria(!mostrarGaleria);
-  };
+
+export default function Seccion3(props: seccion3Props ) {
+
 
   return (
 
@@ -19,17 +22,17 @@ export default function Seccion3() {
 
       <button
         className={` ${styles.stickyButton} ${
-          mostrarGaleria ? styles.active : ""
+          props.abrirBoton2 ? styles.active : ""
         }`}
-        onClick={toggleGaleria}
+        onClick={props.toggleBoton2}
       >
-        {mostrarGaleria ? "Ocultar Galería" : "Ver Galería"}
+        {props.abrirBoton2 ? "Ocultar Galería" : "Ver Galería"}
       </button>
 
 
     
       <div className={styles.test}>
-        {mostrarGaleria && cuadrosDatos.map((cuadro, index) => (
+        {props.abrirBoton2 && cuadrosDatos.map((cuadro, index) => (
           <Galeria key={index} cuadro={cuadro} />
         ))}
       </div>
@@ -40,4 +43,3 @@ export default function Seccion3() {
     </div>
   );
 }
-
