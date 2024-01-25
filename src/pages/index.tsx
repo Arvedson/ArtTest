@@ -23,14 +23,14 @@ const FuncionQueUtilizaComponentes: React.FC = () => {
   return (
     <div className={styles.fondo}>
       
-      {/* <div className={ocultar}>
+      <div className={ocultar}>
         <Seccion1 />
       </div>
 
       <Seccion2 abrirBoton={abrirBoton} toggleBoton={toggleBoton} />
       <Seccion3 abrirBoton2={abrirBoton2} toggleBoton2={toggleBoton2} />
-      <Seccion4 abrirBoton3={abrirBoton3} toggleBoton3={toggleBoton3} /> */}
-      <Seccion5/>
+      <Seccion4 abrirBoton3={abrirBoton3} toggleBoton3={toggleBoton3} />
+      {/* <Seccion5/> */}
     </div>
   );
 };
