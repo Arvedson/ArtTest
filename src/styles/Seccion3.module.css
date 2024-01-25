@@ -176,7 +176,7 @@
         grid-template-columns: 55% 45%;
         grid-template-rows: 50% 50%;
         padding: 16px;
-        margin: 1px;
+       
     }
 
     .nombrecuadro{
@@ -222,7 +222,10 @@
     .componente{
 
         margin: 16px;  
-    }
+        margin-left:0px  ;
+
+        margin-right: 0px;}
+
     .coloresCuadro{
 
         min-width: 0px;
@@ -239,7 +242,15 @@
     }
 }
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
+@media screen and (min-width: 661px) and (max-width: 900px) {
+
+    .componente{
+
+        margin: 16px;  
+        margin-left:16px;
+
+        margin-right: 16px;
+    }
 
 }
 
@@ -247,14 +258,47 @@
 
     .backgroundd{
         padding: 64px;
+        padding-top: 0px;
+        padding-bottom: 32px;
     }
+
+    .stickyButton{
+        margin: 0px;
+    }
+
+
+
 }
 
-@media screen and (min-width: 1241px) and (max-width: 1400px) {
+@media screen and (min-width: 1241px) and (max-width: 1440px) {
 
     .backgroundd{
-        padding: 128px;
+        padding-left: 128px;
+        padding-right: 128px;
+       
     }
+
+    .stickyButton{
+        margin: 0px;
+    }
+
+
+}
+
+@media screen and (min-width: 1441px){
+
+    .backgroundd {
+        padding-top: 32px;
+        padding-left: 20%;
+        padding-right: 20%;
+        gap: 0px;
+    }
+
+    .stickyButton{
+        margin: 0px;
+    }
+
+
 }
   
 

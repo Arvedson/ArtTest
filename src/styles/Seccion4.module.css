@@ -137,3 +137,43 @@
     
 
 }
+
+
+@media screen and (min-width: 900px) and (max-width: 1240px){
+    .background{
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-top: 0px;
+        
+    }
+}
+
+@media screen and (min-width: 1241px) and (max-width: 1440px) {
+
+    .background{
+        margin-top: 22px;
+        padding-left: 128px;
+        padding-right: 128px;
+       
+    }
+
+
+}
+
+@media screen and (min-width: 1441px){
+
+    .background {
+        padding-top: 32px;
+        padding-left: 20%;
+        padding-right: 20%;
+        gap: 0px;
+    }
+    .blog{
+        margin-top: 32px;
+
+    }
+
+
+
+}
+  

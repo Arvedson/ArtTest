@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import styles from "../styles/Seccion3.module.css";
 
-
 interface CuadroProps {
   nombreCuadro: string;
   imagenCuadro: string;
@@ -16,7 +15,6 @@ const Galeria: React.FC<{ cuadro?: CuadroProps }> = ({ cuadro }) => {
   if (!cuadro) {
     return null; 
   }
-
 
   const { nombreCuadro, imagenCuadro, coloresCuadro, tecnicaCuadro, tamañoCuadro } = cuadro;
 

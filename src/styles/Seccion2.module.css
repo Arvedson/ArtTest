@@ -267,7 +267,6 @@
     .div4{
         margin-top: 16px;
         flex-direction: row;
-       
         
     }
 
@@ -275,8 +274,7 @@
         transform: rotate(-90deg);
         gap: 16px;
         width: auto;
-        padding: 16px;
-        
+        padding: 16px;   
     }
 
     .fb, .wa, .insta{
@@ -289,21 +287,15 @@
     .div4 ul li {
         margin: 8px;
     }
-    
-
-
-
-
-
-
-
-
 }
 
 @media screen and (min-width: 901px) and (max-width: 1240px) {
     .background {
         padding: 64px;
         gap: 0PX;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        
     }
 
     .mediaq{
@@ -360,9 +352,10 @@
 
     .background {
 
-    
         padding: 128px;
         gap: 0px;
+        padding-top: 32px;
+        padding-bottom: 32px;
         
     }
     .mediaq{
@@ -418,10 +411,11 @@
 @media screen and (min-width: 1441px){
 
     .background {
-        padding-top: 80px;
+        padding-top: 32px;
         padding-left: 20%;
         padding-right: 20%;
         gap: 0px;
+        padding-bottom: 0px;
         
     }
 
