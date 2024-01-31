@@ -31,7 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ success: true });
 
 
-    sgMail.setApiKey("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");
+    sgMail.setApiKey("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");
 
     const enviarCorreo = async ({ nombre, correo, ciudad, desc }: FormData) => {
       const msg = {
@@ -39,6 +39,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         from: 'arvedson94@gmail.com', // Reemplazar con el correo electrónico de tu dominio
         subject: 'Nuevo formulario enviado',
         text: `
+
           **Nombre:** ${nombre}
           **Correo:** ${correo}
           **Ciudad:** ${ciudad}
