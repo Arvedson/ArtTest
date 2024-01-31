@@ -1,41 +1,43 @@
-// /pages/api/guardarDatos.ts
-
+import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 import sgMail from '@sendgrid/mail';
 
+interface FormData {
+  nombre: string;
+  correo: string;
+  ciudad: string;
+  desc: string;
+}
 
-export default function handler(req, res) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    // obtener los datos del cuerpo de la solicitud
-    const nuevoFormulario = req.body;
+    // Obtener los datos del cuerpo de la solicitud
+    const nuevoFormulario: FormData = req.body;
 
-    // obtener la ruta del archivo JSON
-    const filePath = path.join(process.cwd(), "src", 'data', 'forms.json');
+    // Obtener la ruta del archivo JSON
+    const filePath = path.join(process.cwd(), 'src', 'data', 'forms.json');
 
-    // leer los datos actuales del archivo JSON
-    const datosActuales = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    // Leer los datos actuales del archivo JSON
+    const datosActuales: FormData[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-
-    // agregar el nuevo formulario a los datos existentes
+    // Agregar el nuevo formulario a los datos existentes
     datosActuales.push(nuevoFormulario);
 
-    // escribir los datos actualizados de vuelta al archivo JSON
+    // Escribir los datos actualizados de vuelta al archivo JSON
     fs.writeFileSync(filePath, JSON.stringify(datosActuales, null, 2), 'utf-8');
 
-    // responder con éxito
+    // Responder con éxito
     res.status(200).json({ success: true });
 
     const SENDGRID_API_KEY = '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';
     sgMail.setApiKey(SENDGRID_API_KEY);
-  
-    // ... (código para guardar los datos en el archivo JSON)
-  
+
     // Enviar correo con los datos del formulario
-    const enviarCorreo = async ({ nombre, correo, ciudad, desc }) => {
+    const enviarCorreo = async ({ nombre, correo, ciudad, desc }: FormData) => {
       const msg = {
-        to: 'tomasarvedson@gmail.com', // Reemplaza con tu correo electrónico
-        from: 'arvedson94@gmail.com', // Reemplaza con el correo electrónico de tu dominio
+        to: 'tomas.arvedson@gmail.com', // Reemplazar con tu correo electrónico
+        from: 'arvedson94@gmail.com', // Reemplazar con el correo electrónico de tu dominio
         subject: 'Nuevo formulario enviado',
         text: `
           **Nombre:** ${nombre}
@@ -44,7 +46,7 @@ export default function handler(req, res) {
           **Descripción:** ${desc}
         `,
       };
-  
+
       try {
         await sgMail.send(msg);
         console.log('Correo enviado con éxito');
@@ -54,11 +56,8 @@ export default function handler(req, res) {
     };
 
     enviarCorreo(nuevoFormulario);
-
   } else {
-    // metodo no permitido
+    // Método no permitido
     res.status(405).json({ success: false, message: 'Método no permitido' });
   }
-
 }
-
