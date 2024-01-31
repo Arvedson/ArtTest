@@ -5,6 +5,8 @@ import Seccion3 from './Seccion3';
 import Seccion4 from './Seccion4';
 import styles from '../styles/index.module.css';
 import Seccion5 from './Seccion5';
+import Formtest from './Formtest';
+
 
 const FuncionQueUtilizaComponentes: React.FC = () => {
   //estado de los botones
@@ -21,16 +23,32 @@ const FuncionQueUtilizaComponentes: React.FC = () => {
   const ocultar = abrirBoton3 || abrirBoton2 || abrirBoton ? styles.ocultar : styles.mostrar;
 
   return (
+
+    // <div>
+    //   <Formtest/>
+    // </div>
+
+ 
+
+    
+
+  
+    
+
+
+    
     <div className={styles.fondo}>
       
       <div className={ocultar}>
         <Seccion1 />
-      </div>
+      </div> 
 
-      <Seccion2 abrirBoton={abrirBoton} toggleBoton={toggleBoton} />
+       <Seccion2 abrirBoton={abrirBoton} toggleBoton={toggleBoton} />
       <Seccion3 abrirBoton2={abrirBoton2} toggleBoton2={toggleBoton2} />
-      <Seccion4 abrirBoton3={abrirBoton3} toggleBoton3={toggleBoton3} />
-      {/* <Seccion5/> */}
+      <Seccion4 abrirBoton3={abrirBoton3} toggleBoton3={toggleBoton3} /> 
+      <Seccion5/>
+      <Formtest/>
+     
     </div>
   );
 };

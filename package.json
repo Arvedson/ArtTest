@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "@react-three/fiber": "^7.0.24",
+    "@sendgrid/mail": "^8.1.0",
     "next": "14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sendgrid": "^5.2.3",
     "three": "^0.148.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/sendgrid": "^4.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "sass": "^1.69.5",

@@ -52,17 +52,17 @@ const Seccion2: React.FC<seccion2Props> = (props) => {
             </ul>
 
             <div className={styles.contact}>
-              <button className={styles.fb}>
-                <Image src="/Facebook.png" alt="insta" width={80} height={80} />
-              </button>
+              <a className={styles.fb} >
+                <Image  src="/Facebook.png" alt="insta" width={80} height={80} />
+              </a>
 
-              <button className={styles.insta}>
+              <a className={styles.insta} href="https://www.instagram.com/artdav_/">
                 <Image src="/Instagram.png" alt="insta" width={80} height={80} />
-              </button>
+              </a>
 
-              <button className={styles.wa}>
+              <a href="https://wa.me/528711180230" className={styles.wa}>
                 <Image src="/WhatsApp.png" alt="insta" width={80} height={80} />
-              </button>
+              </a>
             </div>
           </div>
         </div>
