@@ -30,13 +30,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Responder con éxito
     res.status(200).json({ success: true });
 
-    const SENDGRID_API_KEY = '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';
-    sgMail.setApiKey(SENDGRID_API_KEY);
 
-    // Enviar correo con los datos del formulario
+    sgMail.setApiKey("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");
+
     const enviarCorreo = async ({ nombre, correo, ciudad, desc }: FormData) => {
       const msg = {
-        to: 'tomas.arvedson@gmail.com', // Reemplazar con tu correo electrónico
+        to: 'tomasarvedson@gmail.com', // Reemplazar con tu correo electrónico
         from: 'arvedson94@gmail.com', // Reemplazar con el correo electrónico de tu dominio
         subject: 'Nuevo formulario enviado',
         text: `
@@ -46,15 +45,31 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           **Descripción:** ${desc}
         `,
       };
-
-      try {
-        await sgMail.send(msg);
-        console.log('Correo enviado con éxito');
-      } catch (error) {
-        console.error('Error al enviar correo:', error);
+    
+      let intentos = 0;
+      const maxIntentos = 3; // Número máximo de reintentos
+      const tiempoEsperaInicial = 1000; // Tiempo de espera inicial en milisegundos
+      const factorBackoff = 2; // Factor de multiplicación para el tiempo de espera
+    
+      while (intentos < maxIntentos) {
+        try {
+          await sgMail.send(msg);
+          console.log('Correo enviado con éxito');
+          break; // Sale del bucle si el correo se envía correctamente
+        } catch (error) {
+          console.error('Error al enviar correo:', error);
+          intentos++;
+          const tiempoEspera = tiempoEsperaInicial * Math.pow(factorBackoff, intentos);
+          console.log(`Reintentando en ${tiempoEspera} milisegundos...`);
+          await new Promise(resolve => setTimeout(resolve, tiempoEspera));
+        }
+      }
+    
+      if (intentos === maxIntentos) {
+        console.error('Se alcanzó el número máximo de reintentos. El correo no se ha enviado.');
       }
     };
-
+    
     enviarCorreo(nuevoFormulario);
   } else {
     // Método no permitido
