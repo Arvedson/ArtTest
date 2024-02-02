@@ -33,30 +33,37 @@ export default function Formtest() {
 
 
 
-    try {
-      const response = await fetch('/api/datosGuardar', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nombre, correo, ciudad, desc }),
-      });
-
-      if (response.ok) {
-        console.log('Datos enviados con éxito');
-        setNombre('');
-      } else {
-        console.error('Error al enviar datos');
+    const enviarDatos = async () => {
+      const apiUrl = process.env.NODE_ENV === 'production'
+        ? 'https://art-test-git-main-tomas-arvedsons-projects.vercel.app/api/datosGuardar'
+        : 'http://localhost:3000/api/datosGuardar';
+    
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ nombre, correo, ciudad, desc }),
+        });
+    
+        if (response.ok) {
+          console.log('Datos enviados con éxito');
+          setNombre('');
+        } else {
+          console.error('Error al enviar datos');
+        }
+      } catch (error) {
+        console.error('Error de red', error);
       }
-    } catch (error) {
-      console.error('Error de red', error);
-    }
-    setDatosEnviados(true);
-    setNombre("")
-    setCiudad("");
-    setCorreo("");
-    setDesc("");
-  };
+    
+      setDatosEnviados(true);
+      setNombre('');
+      setCiudad('');
+      setCorreo('');
+      setDesc('');
+    };
+    
 
 
     return(    
