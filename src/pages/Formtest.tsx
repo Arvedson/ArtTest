@@ -38,13 +38,15 @@ export default function Formtest() {
         body: JSON.stringify({ nombre, correo, ciudad, desc }),
       });
 
+      setNombre('');
+      setCiudad("")
+      setCorreo("")
+      setDesc("")
+      setDatosEnviados(true);
+
       if (response.ok) {
         console.log('Datos enviados con éxito');
-        setNombre('');
-        setCiudad("")
-        setCorreo("")
-        setDesc("")
-        setDatosEnviados(true);
+
       } else {
         console.error('Error al enviar datos');
       }
