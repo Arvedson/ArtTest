@@ -26,7 +26,7 @@ export default function Formtest() {
 
   const enviarDatos = async () => {
     const apiUrl = process.env.NODE_ENV === 'production'
-      ? 'https://art-test-git-main-tomas-arvedsons-projects.vercel.app/api/datosGuardar'
+      ? 'https://art-test-phi.vercel.app/api/datosGuardar'
       : 'http://localhost:3000/api/datosGuardar';
 
     try {
