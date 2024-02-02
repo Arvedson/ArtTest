@@ -33,6 +33,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
+    console.log("api agarrrada")
+
     const enviarCorreo = async ({ nombre, correo, ciudad, desc }: FormData) => {
       const msg = {
         to: 'tomasarvedson@gmail.com', // Reemplazar con tu correo electrónico
