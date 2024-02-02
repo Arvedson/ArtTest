@@ -31,7 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ success: true });
 
 
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
     const enviarCorreo = async ({ nombre, correo, ciudad, desc }: FormData) => {
       const msg = {
