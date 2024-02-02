@@ -41,6 +41,9 @@ export default function Formtest() {
       if (response.ok) {
         console.log('Datos enviados con éxito');
         setNombre('');
+        setCiudad("")
+        setCorreo("")
+        setDesc("")
         setDatosEnviados(true);
       } else {
         console.error('Error al enviar datos');
@@ -48,10 +51,7 @@ export default function Formtest() {
     } catch (error) {
       console.error('Error de red', error);
     }
-    setCiudad("")
-    setCorreo("")
-    setDesc("")
-    setNombre("")
+ 
   };
 
   const handleSubmit = (event: FormEvent) => {
