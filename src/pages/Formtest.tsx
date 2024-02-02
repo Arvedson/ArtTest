@@ -1,12 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import styles from "../styles/Formtest.module.css";
 
-interface FormData {
-  nombre: string;
-  correo: string;
-  ciudad: string;
-  desc: string;
-}
+
 
 export default function Formtest() {
   const [nombre, setNombre] = useState("");
@@ -34,6 +29,10 @@ export default function Formtest() {
   const enviar = async (event: FormEvent) => {
     event.preventDefault();
 
+    
+
+
+
     try {
       const response = await fetch('/api/datosGuardar', {
         method: 'POST',
@@ -53,6 +52,7 @@ export default function Formtest() {
       console.error('Error de red', error);
     }
     setDatosEnviados(true);
+    setNombre("")
     setCiudad("");
     setCorreo("");
     setDesc("");

@@ -31,7 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ success: true });
 
 
-    sgMail.setApiKey("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");
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     const enviarCorreo = async ({ nombre, correo, ciudad, desc }: FormData) => {
       const msg = {
@@ -61,7 +61,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           console.error('Error al enviar correo:', error);
           intentos++;
           const tiempoEspera = tiempoEsperaInicial * Math.pow(factorBackoff, intentos);
-          console.log(`Reintentando en ${tiempoEspera} milisegundos...`);
+          console.log(`Reintentando en ${tiempoEspera} milisegundos...` );
           await new Promise(resolve => setTimeout(resolve, tiempoEspera));
         }
       }
