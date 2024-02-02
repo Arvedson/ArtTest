@@ -48,6 +48,10 @@ export default function Formtest() {
     } catch (error) {
       console.error('Error de red', error);
     }
+    setCiudad("")
+    setCorreo("")
+    setDesc("")
+    setNombre("")
   };
 
   const handleSubmit = (event: FormEvent) => {
