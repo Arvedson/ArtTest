@@ -1,7 +1,8 @@
+// pages/api/index.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
 import sgMail from '@sendgrid/mail';
+import FormularioModel from '@/models/formschema';
+import connectDB from '@/db';
 
 interface FormData {
   nombre: string;
@@ -11,29 +12,27 @@ interface FormData {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  await connectDB(); // Conectar a la base de datos
+
   if (req.method === 'POST') {
-    // Obtener los datos del cuerpo de la solicitud
-    const nuevoFormulario: FormData = req.body;
+    const nuevoFormularioData: FormData = req.body;
 
-    // Obtener la ruta del archivo JSON
-    const filePath = path.join(process.cwd(), 'src', 'data', 'forms.json');
+    try {
+      // Crear una nueva instancia del modelo con los datos del formulario
+      const nuevoFormulario = new FormularioModel(nuevoFormularioData);
 
-    // Leer los datos actuales del archivo JSON
-    const datosActuales: FormData[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+      // Guardar el formulario en la base de datos
+      const formularioGuardado: FormularioDocument = await nuevoFormulario.save();
 
-    // Agregar el nuevo formulario a los datos existentes
-    datosActuales.push(nuevoFormulario);
+      // Llamar a enviarCorreo antes de enviar la respuesta al cliente
+      await enviarCorreo(nuevoFormularioData);
 
-    // Escribir los datos actualizados de vuelta al archivo JSON
-    fs.writeFileSync(filePath, JSON.stringify(datosActuales, null, 2), 'utf-8');
-
-    // Llamar a enviarCorreo antes de enviar la respuesta al cliente
-    await enviarCorreo(nuevoFormulario);
-
-    // Responder con éxito
-    res.status(200).json({ success: true });
+      res.status(200).json({ success: true, data: formularioGuardado });
+    } catch (error) {
+      console.error('Error al guardar el formulario en la base de datos:', error);
+      res.status(500).json({ success: false, message: 'Error interno del servidor' });
+    }
   } else {
-    // Método no permitido
     res.status(405).json({ success: false, message: 'Método no permitido' });
   }
 }
