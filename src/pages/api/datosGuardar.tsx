@@ -3,6 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
 import FormularioModel from '@/models/formschema';
 import connectDB from '@/db';
+import { Document } from 'mongoose';
+
 
 interface FormData {
   nombre: string;
@@ -10,6 +12,8 @@ interface FormData {
   ciudad: string;
   desc: string;
 }
+
+export interface FormularioDocument extends Document, FormData {}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await connectDB(); // Conectar a la base de datos
