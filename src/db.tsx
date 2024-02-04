@@ -1,11 +1,11 @@
-// db.ts
+
 import mongoose from 'mongoose';
 
-
+const mongazo = (process.env.MONGO_URI || '')
 
 const connectDB = async (): Promise<void> => {
   try {
-    await mongoose.connect(process.env.MONGO_URI || '');
+    await mongoose.connect(mongazo);
     
     console.log('Conectado a MongoDB');
   } catch (error) {
